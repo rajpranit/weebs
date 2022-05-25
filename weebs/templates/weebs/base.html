@@ -59,18 +59,18 @@
                 <h2 class="s-header__nav-heading h6">Site Navigation</h2>
 
                 <ul class="s-header__nav">
-                    <li class="current"><a href=" {% static 'index.html' %} " title="">Home</a></li>
+                    <li class="current"><a href=" {% url 'index' %} " title="">Home</a></li>
                     <li class="has-children">
                         <a href=" {% static '#0' %} " title="">Categories</a>
                         <ul class="sub-menu">
-                            <li><a href=" {% static 'category.html' %} ">Design</a></li>
-                            <li><a href=" {% static 'category.html' %} ">Lifestyle</a></li>
-                            <li><a href=" {% static 'category.html' %} ">Photography</a></li>
-                            <li><a href=" {% static 'category.html' %} ">Vacation</a></li>
-                            <li><a href=" {% static 'category.html' %} ">Work</a></li>
-                            <li><a href=" {% static 'category.html' %} ">Health</a></li>
-                            <li><a href=" {% static 'category.html' %} ">Family</a></li>
-                            <li><a href=" {% static 'category.html' %} ">Relationship</a></li>
+                            <li><a href=" {% url 'category' %} ">Design</a></li>
+                            <li><a href=" {% url 'category' %} ">Lifestyle</a></li>
+                            <li><a href=" {% url 'category' %} ">Photography</a></li>
+                            <li><a href=" {% url 'category' %} ">Vacation</a></li>
+                            <li><a href=" {% url 'category' %} ">Work</a></li>
+                            <li><a href=" {% url 'category' %} ">Health</a></li>
+                            <li><a href=" {% url 'category' %} ">Family</a></li>
+                            <li><a href=" {% url 'category' %} ">Relationship</a></li>
                         </ul>
                     </li>
                     <li class="has-children">
