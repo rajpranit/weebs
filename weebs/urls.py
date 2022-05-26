@@ -2,7 +2,8 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('',views.index,name='index'),
+    # path('',views.index,name='index'),
+    path('',views.index.as_view(),name='index'),
     path('category',views.category,name='category'),
     path('category/anime',views.anime,name='anime'),
     path('category/manhwa',views.manhwa,name='manhwa'),

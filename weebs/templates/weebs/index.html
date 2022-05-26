@@ -25,9 +25,8 @@
 
                 <div class="brick entry featured-grid animate-this">
                     <div class="entry__content">
-
                         <div class="featured-post-slider">
-                            
+                            {% for post in object_list %}
                             <div class="featured-post-slide">
                                 <div class="f-slide">
                                     
@@ -36,54 +35,29 @@
 
                                     <div class="f-slide__content">
                                         <ul class="f-slide__meta">
-                                            <li>Of This Month</li> 
+                                            <li>{{ post.author.first_name }}</li> 
                                             <li><a href="#" >Manhwamen</a></li>
+                                        </ul>
+                                        
+                                        <h1 class="f-slide__title"><a href=" {% url 'single-standard' %} " title="">{{ post.title}}</a></h1> 
+                                        
+                                        <ul class="f-slide__meta">
+                                            {% if post.created_on %}
+                                                <li>{{ post.created_on }}</li> 
+                                            {% else %}
+                                                <li></li>
+                                            {% endif %}
                                         </ul>	
 
-                                        <h1 class="f-slide__title"><a href=" {% url 'single-standard' %} " title="">Top 10 Manhwa</a></h1> 
                                     </div>
 
                                 </div> <!-- f-slide -->
                             </div> <!-- featured-post-slide -->
-
-                            <div class="featured-post-slide">
-                                <div class="f-slide">
-                                    
-                                    <div class="f-slide__background" style="background-image:url(' {% static 'images/thumbs/featured/featured-2.jpg' %} ');"></div>
-                                    <div class="f-slide__overlay"></div>
-
-                                    <div class="f-slide__content">
-                                        <ul class="f-slide__meta">
-                                            <li>September 06, 2020</li> 
-                                            <li><a href="#" >Sakura Haruno</a></li>
-                                        </ul>
-
-                                        <h1 class="f-slide__title"><a href=" {% url 'single-standard' %} " title="">Enhancing Your Designs with Negative Space</a></h1> 
-                                    </div>
-
-                                </div> <!-- f-slide -->
-                            </div> <!-- featured-post-slide -->
-
-                            <div class="featured-post-slide">
-                                <div class="f-slide">
-                                    
-                                    <div class="f-slide__background" style="background-image:url(' {% static 'images/thumbs/featured/featured-3.jpg' %} ');"></div>
-                                    <div class="f-slide__overlay"></div>
-
-                                    <div class="f-slide__content">
-                                        <ul class="f-slide__meta">
-                                            <li>September 05, 2020</li> 
-                                            <li><a href="#" >Shikamaru Nara</a></li>
-                                        </ul>
-
-                                        <h1 class="f-slide__title"><a href=" {% url 'single-standard' %} " title="">Music Album Cover Designs for Inspiration</a></h1> 
-                                    </div>
-
-                                </div> <!-- f-slide -->
-                            </div> <!-- featured-post-slide -->
-
+                            {% endfor %}
+                            
                         </div> <!-- end feature post slider -->
                         
+
                         <div class="featured-post-nav">
                             <button class="featured-post-nav__prev">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12.707 17.293L8.414 13H18v-2H8.414l4.293-4.293-1.414-1.414L4.586 12l6.707 6.707z"></path></svg>

@@ -62,8 +62,8 @@
 
                 <ul class="s-header__nav">
                     <li id="home" class="home"><a href=" {% url 'index' %} " title="">Home</a></li>
-                    <li class="has-children ">
-                        <a  href=" {% url 'category' %} " >Categories</a>
+                    <li id="category"  class="has-children category">
+                        <a  href=" {% url 'category' %} " title="">Categories</a>
                         <ul class="sub-menu">
                             <li id="anime"><a href=" {% url 'anime' %} ">Anime</a></li>
                             <li ><a href=" {% url 'manhwa' %} ">Manhwa</a></li>

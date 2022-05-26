@@ -1,7 +1,12 @@
 from django.shortcuts import render
+from django.views.generic import ListView , DetailView
+from .models import Post
 
-def index(request):
-    return render(request,'weebs/index.html')
+# def index(request):
+#     return render(request,'weebs/index.html')
+class index(ListView):
+    model = Post
+    template_name = 'weebs/index.html'
 
 
 def category(request):
