@@ -1,6 +1,17 @@
 {% extends 'weebs/base.html' %}
 {% load static %}
 
+{% block script %}
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+            if ( document.querySelector("#home").classList.contains('home') )
+
+                document.querySelector("#home").classList.toggle('current');
+        })
+    </script>
+
+{% endblock  %}
+
 {% block body %}
 
     <!-- masonry
@@ -20,16 +31,16 @@
                             <div class="featured-post-slide">
                                 <div class="f-slide">
                                     
-                                    <div class="f-slide__background" style="background-image:url(' {% static 'images/thumbs/featured/featured-1.jpg' %} ');"></div>
+                                    <div class="f-slide__background" style="background-image:url(' {% static 'images/thumbs/home/manhwa.jpg' %} ');"></div>
                                     <div class="f-slide__overlay"></div>
 
                                     <div class="f-slide__content">
                                         <ul class="f-slide__meta">
-                                            <li>September 06, 2020</li> 
-                                            <li><a href="#" >Naruto Uzumaki</a></li>
+                                            <li>Of This Month</li> 
+                                            <li><a href="#" >Manhwamen</a></li>
                                         </ul>	
 
-                                        <h1 class="f-slide__title"><a href=" {% static 'single-standard.html' %} " title="">A Practical Guide to a Minimalist Lifestyle.</a></h1> 
+                                        <h1 class="f-slide__title"><a href=" {% url 'single-standard' %} " title="">Top 10 Manhwa</a></h1> 
                                     </div>
 
                                 </div> <!-- f-slide -->
@@ -47,7 +58,7 @@
                                             <li><a href="#" >Sakura Haruno</a></li>
                                         </ul>
 
-                                        <h1 class="f-slide__title"><a href=" {% static 'single-standard.html' %} " title="">Enhancing Your Designs with Negative Space</a></h1> 
+                                        <h1 class="f-slide__title"><a href=" {% url 'single-standard' %} " title="">Enhancing Your Designs with Negative Space</a></h1> 
                                     </div>
 
                                 </div> <!-- f-slide -->
@@ -65,7 +76,7 @@
                                             <li><a href="#" >Shikamaru Nara</a></li>
                                         </ul>
 
-                                        <h1 class="f-slide__title"><a href=" {% static 'single-standard.html' %} " title="">Music Album Cover Designs for Inspiration</a></h1> 
+                                        <h1 class="f-slide__title"><a href=" {% url 'single-standard' %} " title="">Music Album Cover Designs for Inspiration</a></h1> 
                                     </div>
 
                                 </div> <!-- f-slide -->
@@ -88,7 +99,7 @@
                 <article class="brick entry format-standard animate-this">
     
                     <div class="entry__thumb">
-                        <a href=" {% static 'single-standard.html' %} " class="thumb-link">
+                        <a href=" {% url 'single-standard' %} " class="thumb-link">
                             <img src=" {% static 'images/thumbs/masonry/woodcraft-600.jpg' %} " 
                                  srcse {% static 't="imag' %} es/thumbs/masonry/woodcraft-600.jpg 1x, images/thumbs/masonry/woodcraft-1200.jpg 2x" alt="">
                         </a>
@@ -104,7 +115,7 @@
                                 </span>
                             </div>
     
-                            <h1 class="entry__title"><a href=" {% static 'single-standard.html' %} ">Just a Standard Format Post.</a></h1>
+                            <h1 class="entry__title"><a href=" {% url 'single-standard' %} ">Just a Standard Format Post.</a></h1>
                             
                         </div>
                         <div class="entry__excerpt">
@@ -119,7 +130,7 @@
                 <article class="brick entry format-standard animate-this">
  
                     <div class="entry__thumb">
-                        <a href=" {% static 'single-standard.html' %} " class="thumb-link">
+                        <a href=" {% url 'single-standard' %} " class="thumb-link">
                             <img src=" {% static 'images/thumbs/masonry/tulips-600.jpg' %} " 
                                  srcse {% static 't="imag' %} es/thumbs/masonry/tulips-600.jpg 1x, images/thumbs/masonry/tulips-1200.jpg 2x" alt="">
                         </a>
@@ -134,7 +145,7 @@
                                 </span>
                             </div>
     
-                            <h1 class="entry__title"><a href=" {% static 'single-standard.html' %} ">10 Interesting Facts About Caffeine.</a></h1>
+                            <h1 class="entry__title"><a href=" {% url 'single-standard' %} ">10 Interesting Facts About Caffeine.</a></h1>
                             
                         </div>
                         <div class="entry__excerpt">

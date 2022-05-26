@@ -6,7 +6,7 @@
     <!--- basic page needs
     ================================================== -->
     <meta charset="utf-8">
-    <title>Abstract</title>
+    <title>TheManhwa</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -29,6 +29,8 @@
     <link rel="icon" type="image/png" sizes="32x32" href=" {% static 'favicon-32x32.png' %} ">
     <link rel="icon" type="image/png" sizes="16x16" href=" {% static 'favicon-16x16.png' %} ">
     <link rel="manifest" href=" {% static 'site.webmanifest' %} ">
+        {% block script %}
+        {% endblock  %}
 
 </head>
 
@@ -44,12 +46,12 @@
 
     <!-- header
     ================================================== -->
-    <header class="s-header">
+    <header class="s-header" style="  background: url('{% static 'images/R.jpg' %}');" >
 
         <div class="row s-header__content">
 
             <div class="s-header__logo">
-                <a class="logo" href=" {% static 'index.html' %} ">
+                <a class="logo" href=" {% url 'index' %} ">
                     <img src=" {% static 'images/logo.svg' %} " alt="Homepage">
                 </a>
             </div>
@@ -59,32 +61,31 @@
                 <h2 class="s-header__nav-heading h6">Site Navigation</h2>
 
                 <ul class="s-header__nav">
-                    <li class="current"><a href=" {% url 'index' %} " title="">Home</a></li>
-                    <li class="has-children">
-                        <a href=" {% static '#0' %} " title="">Categories</a>
+                    <li id="home" class="home"><a href=" {% url 'index' %} " title="">Home</a></li>
+                    <li class="has-children ">
+                        <a  href=" {% url 'category' %} " >Categories</a>
                         <ul class="sub-menu">
-                            <li><a href=" {% url 'category' %} ">Design</a></li>
-                            <li><a href=" {% url 'category' %} ">Lifestyle</a></li>
-                            <li><a href=" {% url 'category' %} ">Photography</a></li>
-                            <li><a href=" {% url 'category' %} ">Vacation</a></li>
-                            <li><a href=" {% url 'category' %} ">Work</a></li>
-                            <li><a href=" {% url 'category' %} ">Health</a></li>
-                            <li><a href=" {% url 'category' %} ">Family</a></li>
-                            <li><a href=" {% url 'category' %} ">Relationship</a></li>
+                            <li id="anime"><a href=" {% url 'anime' %} ">Anime</a></li>
+                            <li ><a href=" {% url 'manhwa' %} ">Manhwa</a></li>
+                            <li><a href=" {% url 'manhua' %} ">Manhua</a></li>
+                            <li><a href=" {% url 'doujins' %} ">Doujins</a></li>
+                            <li><a href=" {% url 'hentai' %} ">Hentai</a></li>
+                            <li><a href=" {% url 'category' %} ">Category</a></li>
+                      
                         </ul>
                     </li>
                     <li class="has-children">
                         <a href=" {% static '#0' %} " title="">Blog</a>
                         <ul class="sub-menu">
-                        <li><a href=" {% static 'single-video.html' %} ">Video Post</a></li>
-                        <li><a href=" {% static 'single-audio.html' %} ">Audio Post</a></li>
-                        <li><a href=" {% static 'single-gallery.html' %} ">Gallery Post</a></li>
-                        <li><a href=" {% static 'single-standard.html' %} ">Standard Post</a></li>
+                        <li><a href=" {% url 'single-video' %} ">Video Post</a></li>
+                        <li><a href=" {% url 'single-audio' %} ">Audio Post</a></li>
+                        <li><a href=" {% url 'single-gallery' %} ">Gallery Post</a></li>
+                        <li><a href=" {% url 'single-standard' %} ">Standard Post</a></li>
                         </ul>
                     </li>
                     <li><a href=" {% static 'styles.html' %} " title="">Styles</a></li>
-                    <li><a href=" {% url 'about' %} " title="">About</a></li>
-                    <li><a href=" {% static 'contact.html' %} " title="">Contact</a></li>
+                    <li id="about" class="about"><a href=" {% url 'about' %} " title="">About</a></li>
+                    <li><a href=" {% url 'contact' %} " title="">Contact</a></li>
                 </ul> <!-- end header__nav -->
 
                 <a href=" {% static '#0' %} " title="Close Menu" class="s-header__overlay-close close-mobile-menu">Close</a>

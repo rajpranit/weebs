@@ -1,6 +1,17 @@
 {% extends 'weebs/base.html' %}
 {% load static %}
 
+{% block script %}
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+            if ( document.querySelector("#about").classList.contains('about') )
+
+                document.querySelector("#about").classList.toggle('current');
+        })
+    </script>
+
+{% endblock  %}
+
 {% block body %}
 
 
