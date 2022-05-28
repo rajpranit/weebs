@@ -1,13 +1,19 @@
 from django.shortcuts import render
 from django.views.generic import ListView , DetailView
-from .models import Post
+from .models import Post , manhwa
 
-# def index(request):
-#     return render(request,'weebs/index.html')
-class index(ListView):
-    model = Post
-    template_name = 'weebs/index.html'
+def index(request):
+    posts = Post.objects.all()
+    return render(request,'weebs/index.html',{
+        "posts":posts,
+    })
 
+
+def article_detail(request,pk ):
+    post = Post.objects.filter(pk=pk)
+    return render(request,'weebs/article-detail.html',{
+        "post":post,
+    })
 
 def category(request):
     return render(request,'weebs/category.html')
