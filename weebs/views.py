@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView , DetailView
-from .models import Post , manhwa
+from .models import Post
 
 def index(request):
     posts = Post.objects.all()
