@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from sqlalchemy import null
 
 
 class manhwa(models.Model):
@@ -53,32 +54,34 @@ class hentai(models.Model):
     def __str__(self):
         return f"{self.title} | {self.chapters}"
 
-# class genre(models.Model):
-#     manhwa = models.ForeignKey(manhwa,null=True, blank=True,on_delete=models.CASCADE)
-#     manhua = models.ForeignKey(manhua,null=True, blank=True,on_delete=models.CASCADE)
-#     anime = models.ForeignKey(anime,null=True, blank=True,on_delete=models.CASCADE)
-#     doujins = models.ForeignKey(doujins,null=True, blank=True,on_delete=models.CASCADE)
-#     hentai = models.ForeignKey(hentai,null=True, blank=True,on_delete=models.CASCADE)
-
-#     def __str__(self):
-#         if manhwa:
-#             return f"manhwa"
-#         if manhua:
-#             return f"manhua"
-#         if anime:
-#             return f"anime"
-#         if doujins:
-#             return f"doujins"
-#         if hentai:
-#             return f"hentai"
 
 class Post(models.Model):
     title = models.CharField(max_length=225)
     author = models.ForeignKey(User,on_delete=models.CASCADE)
-    body = models.TextField()
-    manhwa = models.ManyToManyField(manhwa,blank=True,null=True)
+    body = models.TextField(null=True, blank=True)
+    manhwa = models.ManyToManyField(manhwa,blank=True)
     manhua = models.ManyToManyField(manhua,blank=True)
+    poster_image_lg = models.ImageField(blank=True,null=True,upload_to='images/')
+    poster_image = models.ImageField(blank=True,null=True,upload_to='images/Poster')
+    poster_image_md = models.ImageField(blank=True,null=True,upload_to='images/')
+    poster_image_sm = models.ImageField(blank=True,null=True,upload_to='images/')
+    created_on = models.DateTimeField(null=True)
+    Type = models.CharField(max_length=45,null=True,blank=True)
    
+
+    def __str__(self):
+        return f"{self.title} | {self.author}"
+
+class ManhwaPost(models.Model):
+    title = models.CharField(max_length=225)
+    author = models.ForeignKey(User,on_delete=models.CASCADE)
+    body = models.TextField(null=True, blank=True)
+    manhwa = models.ManyToManyField(manhwa,blank=True)
+    manhua = models.ManyToManyField(manhua,blank=True)
+    poster_image_lg = models.ImageField(blank=True,null=True,upload_to='images/')
+    poster_image = models.ImageField(blank=True,null=True,upload_to='images/Poster')
+    poster_image_md = models.ImageField(blank=True,null=True,upload_to='images/')
+    poster_image_sm = models.ImageField(blank=True,null=True,upload_to='images/')
     created_on = models.DateTimeField(null=True)
     Type = models.CharField(max_length=45,null=True,blank=True)
    
